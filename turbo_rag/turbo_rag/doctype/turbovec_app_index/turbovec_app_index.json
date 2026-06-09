@@ -1,0 +1,93 @@
+{
+  "actions": [],
+  "allow_rename": 1,
+  "autoname": "field:document_type",
+  "creation": "2026-06-09 12:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "document_type",
+    "text_fields",
+    "index_attachments",
+    "enabled",
+    "filter_section",
+    "ingest_all",
+    "document_filter",
+    "specific_documents"
+  ],
+  "fields": [
+    {
+      "fieldname": "document_type",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Document Type",
+      "options": "DocType",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "text_fields",
+      "fieldtype": "Small Text",
+      "label": "Text Fields to Index (comma-separated)",
+      "description": "e.g. title, description, notes. If empty, it will try to find standard fields like subject, title, description, content."
+    },
+    {
+      "default": "0",
+      "fieldname": "index_attachments",
+      "fieldtype": "Check",
+      "label": "Index File Attachments",
+      "description": "Process and index attached PDFs, TXT, and DOCX files for this document."
+    },
+    {
+      "default": "1",
+      "fieldname": "enabled",
+      "fieldtype": "Check",
+      "label": "Enabled"
+    },
+    {
+      "fieldname": "filter_section",
+      "fieldtype": "Section Break",
+      "label": "Ingestion Filters (Document Scope)"
+    },
+    {
+      "default": "1",
+      "fieldname": "ingest_all",
+      "fieldtype": "Check",
+      "label": "Ingest All Documents",
+      "description": "If unchecked, only documents matching the filters below will be ingested."
+    },
+    {
+      "fieldname": "document_filter",
+      "fieldtype": "Small Text",
+      "label": "Document Filter Query (JSON)",
+      "description": "Filters to apply when selecting documents. e.g. `{\"stage\": \"CDR\", \"production_type\": \"Internal\"}`"
+    },
+    {
+      "fieldname": "specific_documents",
+      "fieldtype": "Small Text",
+      "label": "Specific Documents (comma-separated)",
+      "description": "Specify explicit document names to ingest. e.g. `PT-COMP-0001, PT-COMP-0002`"
+    }
+  ],
+  "modified": "2026-06-09 13:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Turbo Rag",
+  "name": "TurboVec App Index",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "states": []
+}

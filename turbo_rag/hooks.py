@@ -2,9 +2,9 @@ from . import __version__ as app_version
 
 app_name = "turbo_rag"
 app_title = "Turbo Rag"
-app_publisher = "automationbot@agnikul.in"
+app_publisher = ""
 app_description = "Turbo-fast RAG for Frappe using TurboVec"
-app_email = "automationbot@agnikul.in"
+app_email = ""
 app_license = "MIT"
 
 # Includes in <head>
@@ -102,13 +102,12 @@ app_license = "MIT"
 # ---------------
 # Hook on document methods and events
 
-# doc_events = {
-#	"*": {
-#		"on_update": "method",
-#		"on_cancel": "method",
-#		"on_trash": "method"
-#	}
-# }
+doc_events = {
+	"*": {
+		"on_update": "turbo_rag.turbo_rag.index_manager.on_doc_update",
+		"on_trash": "turbo_rag.turbo_rag.index_manager.on_doc_delete"
+	}
+}
 
 # Scheduled Tasks
 # ---------------

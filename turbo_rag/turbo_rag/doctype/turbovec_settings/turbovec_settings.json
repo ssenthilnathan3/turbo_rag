@@ -1,0 +1,137 @@
+{
+  "actions": [],
+  "allow_rename": 1,
+  "creation": "2026-06-09 12:00:00.000000",
+  "doctype": "DocType",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "ollama_section",
+    "chat_with_rag",
+    "ollama_url",
+    "llm_model",
+    "embedding_model",
+    "embedding_dim",
+    "scope_section",
+    "allowed_apps",
+    "index_section",
+    "bit_width",
+    "index_file_path",
+    "similarity_threshold",
+    "top_k_retrieve",
+    "top_k_final"
+  ],
+  "fields": [
+    {
+      "fieldname": "ollama_section",
+      "fieldtype": "Section Break",
+      "label": "Ollama Configuration"
+    },
+    {
+      "fieldname": "chat_with_rag",
+      "fieldtype": "Button",
+      "label": "Chat with RAG"
+    },
+    {
+      "default": "http://localhost:11434",
+      "fieldname": "ollama_url",
+      "fieldtype": "Data",
+      "label": "Ollama Base URL",
+      "reqd": 1
+    },
+    {
+      "default": "llama3.1",
+      "fieldname": "llm_model",
+      "fieldtype": "Data",
+      "label": "LLM Model",
+      "reqd": 1
+    },
+    {
+      "default": "nomic-embed-text",
+      "fieldname": "embedding_model",
+      "fieldtype": "Data",
+      "label": "Embedding Model",
+      "reqd": 1
+    },
+    {
+      "default": "768",
+      "fieldname": "embedding_dim",
+      "fieldtype": "Int",
+      "label": "Embedding Dimension",
+      "reqd": 1
+    },
+    {
+      "fieldname": "scope_section",
+      "fieldtype": "Section Break",
+      "label": "Scope Configuration"
+    },
+    {
+      "fieldname": "allowed_apps",
+      "fieldtype": "Small Text",
+      "label": "Allowed Apps (comma-separated)",
+      "description": "Specify the list of Frappe apps allowed for ingestion (e.g. product_tracking, erpnext). If empty, all apps are allowed.",
+      "default": "product_tracking"
+    },
+    {
+      "fieldname": "index_section",
+      "fieldtype": "Section Break",
+      "label": "TurboVec Index Configuration"
+    },
+    {
+      "default": "4",
+      "fieldname": "bit_width",
+      "fieldtype": "Select",
+      "label": "Quantization Bit Width",
+      "options": "2\n4",
+      "reqd": 1
+    },
+    {
+      "default": "private/files/turbovec_index.tvim",
+      "fieldname": "index_file_path",
+      "fieldtype": "Data",
+      "label": "Index File Path (relative to site path)",
+      "reqd": 1
+    },
+    {
+      "default": "0.0",
+      "fieldname": "similarity_threshold",
+      "fieldtype": "Float",
+      "label": "Similarity Threshold (0.0 to 1.0)"
+    },
+    {
+      "default": "50",
+      "fieldname": "top_k_retrieve",
+      "fieldtype": "Int",
+      "label": "Top K Retrieve (Before Permission Filter)",
+      "reqd": 1
+    },
+    {
+      "default": "5",
+      "fieldname": "top_k_final",
+      "fieldtype": "Int",
+      "label": "Top K Final (Passed to LLM)",
+      "reqd": 1
+    }
+  ],
+  "issingle": 1,
+  "modified": "2026-06-09 13:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Turbo Rag",
+  "name": "TurboVec Settings",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    }
+  ],
+  "states": []
+}
