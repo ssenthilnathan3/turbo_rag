@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include turbo_rag *.css
+recursive-include turbo_rag *.csv
+recursive-include turbo_rag *.html
+recursive-include turbo_rag *.ico
+recursive-include turbo_rag *.js
+recursive-include turbo_rag *.json
+recursive-include turbo_rag *.md
+recursive-include turbo_rag *.png
+recursive-include turbo_rag *.py
+recursive-include turbo_rag *.svg
+recursive-include turbo_rag *.txt
+recursive-exclude turbo_rag *.pyc
